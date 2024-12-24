@@ -26,6 +26,8 @@ function HeroSection() {
           <Image
             src="/chair.png"
             alt="Modern black chair with wooden legs"
+            width= {400}
+            height={400}
             className="object-contain max-h-[400px] sm:max-h-[480px] lg:max-h-[584px] w-full"
           />
         </div>

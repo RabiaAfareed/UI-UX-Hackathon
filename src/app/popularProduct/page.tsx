@@ -9,21 +9,21 @@ export default function PopularProducts() {
     {
       name: "The Poplar suede sofa",
       price: 980,
-      Image: "/sofa.jpeg?height=400&width=600",
-      ImageAlt: "Green velvet sofa with wooden legs",
+      Image: "/sofa.jpeg", 
+      ImageAlt: "Black modern chair with wooden legs on teal background",
       className: "md:col-span-2"
     },
     {
       name: "The Dandy chair",
       price: 250,
-      Image: "/creamic1.png?height=400&width=400",
+      Image: "/creamic1.png",
       ImageAlt: "Black modern chair with wooden legs on teal background",
       className: "md:col-span-1"
     },
     {
       name: "The Dandy chair",
       price: 250,
-      Image: "/blackchair.png?height=400&width=400",
+      Image: "/blackchair.png",
       ImageAlt: "Black and white photo of a wooden chair",
       className: "md:col-span-1"
     }
@@ -46,6 +46,8 @@ export default function PopularProducts() {
               <Image
                 src={product.Image}
                 alt={product.ImageAlt}
+                height={400}
+                width={600}
                 className={`object-cover w-full h-full transition-transform duration-300 `}
               />
             </div>

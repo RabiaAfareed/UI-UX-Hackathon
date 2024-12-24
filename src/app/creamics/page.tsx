@@ -43,6 +43,8 @@ export default function CeramicsCollection() {
               <Image
                 src={product.Image}
                 alt={product.name}
+                height={400}
+                width={400}
                 className="w-full h-full object-cover"
               />
             </div>

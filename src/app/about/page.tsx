@@ -32,6 +32,8 @@ const About = () => {
           <Image
             src="/About main.png"
             alt="About main"
+            height={400}
+            width={600}
             className="w-full transition-transform duration-300 ease-in-out hover:scale-105 hover:translate-y-1"
           />
         </div>
@@ -42,6 +44,8 @@ const About = () => {
         <Image
           src="/About second.png"
           alt="Service"
+          height={400}
+          width={600}
           className="w-full md:w-2/5 transition-transform duration-300 ease-in-out hover:scale-105 hover:translate-y-1"
         />
         <div className="border-2 bg-slate-200 w-full md:w-3/5 p-8 md:p-20">
@@ -90,6 +94,8 @@ const About = () => {
               <Image
                 src={item.Image}
                 alt={item.title}
+                height={400}
+                width={600}
                 className="mx-auto transition-transform duration-300 ease-in-out hover:scale-105 hover:translate-y-1"
               />
               <h1 className="text-custom-purple text-lg mt-4">{item.title}</h1>
