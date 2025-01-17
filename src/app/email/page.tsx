@@ -14,7 +14,7 @@ export default function Email() {
   }
 
   return (
-    <section className="w-full max-w-[1440px] mx-auto bg-gray-200">
+    <section className="w-full max-w-[1440px] mx-auto bg-gray-200 mb-[40px]">
       <div className="h-full w-full px-4 sm:px-6 md:px-[74px] pt-[52px] pb-[65px] flex flex-col items-center text-center">
         {/* Heading */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light mb-6">

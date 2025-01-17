@@ -1,53 +1,47 @@
-import React from "react";
+
 import Image from "next/image";
+import { client } from "@/sanity/lib/client";
+import Link from "next/link";
 
 
-export default function CeramicsCollection() {
-  const products = [
-    {
-      name: "The Dandy chair",
-      price: 250,
-      Image: "/creamic1.png",
-      background: "bg-[#92ADB0]"
-    },
-    {
-      name: "Rustic Vase Set",
-      price: 155,
-      Image: "/creamic2.png",
-      background: "bg-[#D9D9D6]"
-    },
-    {
-      name: "The Silky Vase",
-      price: 125,
-      Image: "/creamic3.png",
-      background: "bg-[#373737]"
-    },
-    {
-      name: "The Lucy Lamp",
-      price: 399,
-      Image: "/creamic4.png",
-      background: "bg-[#52B0B0]"
-    }
-  ]
+export default async function CeramicsCollection() {
+
+   
+ const res = await client.fetch(
+  `*[_type == 'landingPage'][0].sections[1]{
+    'creamicsHeading': creamicsHeading,
+    'cards': cards[] {
+      'cardCremImg': cardCremImg.asset->url,
+      'cardCremHeading': cardCremHeading,
+      'cardCremPrice': cardCremPrice} }`);
 
   return (
     <section className="max-w-[1440px] min-h-[761px] mx-auto px-4 md:px-8 py-16">
       <h2 className="text-4xl md:text-5xl font-light mb-12 px-4">
-        New ceramics
+       {res.creamicsHeading}
       </h2>
-      
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        {products.map((product, index) => (
+        {(res.cards).map((item: any, index: number) => (
           <div key={index} className="flex flex-col">
-            <div className={`aspect-square mb-6 ${product.background}`}>
+            <div className={`aspect-square mb-6 ${item.background || ""}`}>
+              <Link href="/productListing">
               <Image
-                src={product.Image}
-                alt={product.name}
-                className="w-full h-full object-cover"
+                src={res.cards[index].cardCremImg}
+                alt={item.name}
+                height={400}
+                width={400}
+                className="w-full h-full object-cover transition-transform duration-300
+                 ease-in-out hover:scale-105 hover:translate-y-1"
               />
+              </Link>
             </div>
-            <h3 className="text-xl font-normal mb-2">{product.name}</h3>
-            <p className="text-lg text-gray-600">£{product.price}</p>
+            <h3 className="text-xl font-normal mb-2">
+            {res.cards[index].cardCremHeading}
+            </h3>
+            <p className="text-lg text-gray-600">
+              £{res.cards[index].cardCremPrice}
+            </p>
           </div>
         ))}
       </div>
@@ -58,5 +52,5 @@ export default function CeramicsCollection() {
         </button>
       </div>
     </section>
-  )
+  );
 }

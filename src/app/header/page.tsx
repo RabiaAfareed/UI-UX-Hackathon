@@ -43,7 +43,7 @@ function Header() {
           <p className="text-[14px] sm:text-[16px] leading-[20px] sm:leading-[22px] font-[400] text-[#000000]">
             Tables
           </p>
-          <Link href={"/productCard"}>
+          <Link href={"/productListing"}>
             <p className="text-[14px] sm:text-[16px] leading-[20px] sm:leading-[22px] font-[400] text-[#000000]">
               Chairs
             </p>
@@ -51,9 +51,11 @@ function Header() {
           <p className="text-[14px] sm:text-[16px] leading-[20px] sm:leading-[22px] font-[400] text-[#000000]">
             Crockery
           </p>
-          <p className="text-[14px] sm:text-[16px] leading-[20px] sm:leading-[22px] font-[400] text-[#000000]">
+         <Link href={"/productCard"}>
+         <p className="text-[14px] sm:text-[16px] leading-[20px] sm:leading-[22px] font-[400] text-[#000000]">
             Tableware
           </p>
+         </Link>
           <Link href={"/brand"}>
             <p className="text-[14px] sm:text-[16px] leading-[20px] sm:leading-[22px] font-[400] text-[#000000]">
               Cutlery

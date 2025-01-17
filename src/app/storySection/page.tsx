@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 export default function BrandStorySection() {
     return (
       <section className="w-full max-w-[1440px]  mx-auto">
@@ -30,12 +31,14 @@ export default function BrandStorySection() {
           </div>
   
           {/* Image Section */}
-          <div className="relative h-full bg-[#E9E2D9] overflow-hidden">
+         <Link href="/productListing">
+         <div className="relative h-full bg-[#E9E2D9] overflow-hidden">
             <Image src={"/image.png"} height={503}width={720}
               alt="Modern furniture "
               className="object-cover w-full h-full"
             />
           </div>
+         </Link>
         </div>
       </section>
     )
