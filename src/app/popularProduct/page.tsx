@@ -13,7 +13,6 @@ export default async function PopularProducts() {
         'cardPopularProductsImg': cardPopularProductsImg.asset->url,
         'cardPopularProductsHeading': cardPopularProductsHeading,
         'cardPopularProductsPrice': cardPopularProductsPrice} }`);
- 
 
 
   return (
@@ -36,7 +35,10 @@ export default async function PopularProducts() {
                 alt={product.ImageAlt}
                 height={400}
                 width={600}
+
                 className={"object-cover w-full h-full transition-transform duration-300 ease-in-out hover:scale-105 hover:translate-y-1" }
+
+
               />
              </Link>
             </div>

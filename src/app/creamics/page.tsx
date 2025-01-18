@@ -27,12 +27,14 @@ export default async function CeramicsCollection() {
             <div className={`aspect-square mb-6 ${item.background || ""}`}>
               <Link href="/productListing">
               <Image
+
                 src={res.cards[index].cardCremImg}
                 alt={item.name}
                 height={400}
                 width={400}
                 className="w-full h-full object-cover transition-transform duration-300
                  ease-in-out hover:scale-105 hover:translate-y-1"
+               
               />
               </Link>
             </div>
